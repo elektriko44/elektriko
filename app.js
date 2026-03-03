@@ -1341,6 +1341,7 @@ if (ch.drm && ch.drmType === "widevine") {
     updateClock();
     setInterval(updateClock, 1000);
   });
+  window.playChannel = playChannel;
 })();
 
 const videoElement = document.querySelector('video');
