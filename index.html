@@ -4,26 +4,22 @@
 
 <meta charset="UTF-8">
 <title>3RsTV</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- PWA -->
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#000000">
-
-<!-- iOS support -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <link rel="stylesheet" href="style.css">
 
 </head>
-
 <body>
 
 <!-- HEADER -->
 <div class="lp-header">
-  <div class="logo">3RsTV IPTV</div>
+  <div class="logo">3RsTV</div>
 
   <div class="viewer-fisheye">
     <div class="viewer-fisheye-inner">
@@ -35,7 +31,7 @@
 
 <div class="lp-container">
 
-  <!-- PLAYER LEFT -->
+  <!-- PLAYER -->
   <div class="lp-left">
     <div class="player-wrapper">
       <div id="playerContainer"></div>
@@ -50,7 +46,7 @@
       <img id="bannerImg" src="https://i.imgur.com/Y9gGFen.jpeg">
     </div>
 
-    <!-- TOP VIEWED -->
+    <!-- TOP 10 -->
     <div class="lp-section">
       <h3>Top 10 Viewed Channels</h3>
       <div id="top10List" class="lp-top10"></div>
@@ -59,7 +55,6 @@
     <!-- CATEGORIES -->
     <div class="lp-section">
       <h3>Categories</h3>
-
       <div id="categoryTabs" class="lp-categories">
         <button class="category-tab active" data-category="HLS">HLS</button>
         <button class="category-tab" data-category="Converge">Converge</button>
@@ -82,8 +77,6 @@
 <!-- PLAYERS -->
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.9.2/shaka-player.compiled.min.js"></script>
-
-<!-- SUPABASE -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="channels.js"></script>
@@ -106,12 +99,15 @@ setInterval(()=>{
 },4000);
 </script>
 
-<!-- TOP 10 REALTIME -->
+<!-- TOP 10 CLICKABLE + REALTIME -->
 <script>
+
 let top10Timer=null;
+let currentPlayingId=null;
 
 async function renderTopViewed(){
-  if(!window.supabase) return;
+
+  if(!window.supabase || !window.CHANNELS_DATA) return;
 
   const sb = window.supabase.createClient(
     "https://uhujowmgmcnjbkgacfke.supabase.co",
@@ -126,21 +122,46 @@ async function renderTopViewed(){
 
   const list=document.getElementById("top10List");
   if(!list) return;
+
   list.innerHTML="";
 
   data?.forEach((row,i)=>{
-    const ch=window.CHANNELS_DATA.find(c=>c.id===row.id);
-    if(!ch) return;
+
+    const selected = window.CHANNELS_DATA.find(c => c.id === row.id);
+    if(!selected) return;
 
     const div=document.createElement("div");
     div.className="top10-card";
+
+    if(i===0) div.classList.add("top1-glow");
+    if(selected.id===currentPlayingId) div.classList.add("now-playing");
+
     div.innerHTML=`
       <div class="rank">${i+1}</div>
-      <img src="${row.logo}">
+      ${i<3 ? '<div class="trending">🔥</div>' : ''}
+      <img src="${row.logo}" alt="">
     `;
-    div.onclick=()=>playChannel(ch);
+
+    div.addEventListener("click", function(){
+
+      if(typeof window.playChannel === "function"){
+        window.playChannel(selected);
+      }
+
+      currentPlayingId = selected.id;
+
+      renderTopViewed();
+
+      const player = document.getElementById("playerContainer");
+      if(player){
+        player.scrollIntoView({behavior:"smooth"});
+      }
+
+    });
+
     list.appendChild(div);
   });
+
 }
 
 function startTop10Refresh(){
@@ -150,6 +171,7 @@ function startTop10Refresh(){
 }
 
 setTimeout(startTop10Refresh,2000);
+
 </script>
 
 <!-- SAFE SERVICE WORKER REGISTER -->
@@ -157,9 +179,7 @@ setTimeout(startTop10Refresh,2000);
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("/sw.js").then(reg => {
-
       reg.update();
-
       reg.addEventListener("updatefound", () => {
         const newWorker = reg.installing;
         newWorker.addEventListener("statechange", () => {
@@ -168,7 +188,6 @@ if ("serviceWorker" in navigator) {
           }
         });
       });
-
     });
   });
 }
