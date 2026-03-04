@@ -1,13 +1,16 @@
 // Token helpers (moved here so channels.js is self-contained)
 function withToken(baseUrl, tokenKey) {
   const IPTV_TOKENS = {
-    converge: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-  astro: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-  iheart: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-    SonyPixHD: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-    StarMovies: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-    StarMoviesSelect: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-  HeartOfAsia: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo"
+  converge: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+ cignal: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  astro: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  iheart: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  SonyPixHD: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  StarMovies: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  StarMoviesSelect: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  gmalife: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  gmanewstv: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  HeartOfAsia: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4" 
   };
 
   const token = IPTV_TOKENS[tokenKey];
@@ -17,13 +20,16 @@ function withToken(baseUrl, tokenKey) {
 
 function withHlsToken(baseUrl, tokenKey) {
   const IPTV_TOKENS = {
-    converge: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-  astro: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-  iheart: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-    SonyPixHD: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-    StarMovies: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-    StarMoviesSelect: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo",
-  HeartOfAsia: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcxNDcyNTQ2LCJleHAiOjE3NzI3Njg1NDYsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mjc2ODU0Nn0.xUY-gdCGyqP4cICCDEYjyLiuB8enKAct6csI1-WjYLo"
+   converge: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+ cignal: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  astro: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  iheart: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  SonyPixHD: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  StarMovies: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  StarMoviesSelect: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  gmalife: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  gmanewstv: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4",
+  HeartOfAsia: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJNb29uIiwiaWF0IjoxNzcyNTg1NDEyLCJleHAiOjE3NzM4ODE0MTIsImFjY291bnRFeHBpcmVkIjpmYWxzZSwiYWNjb3VudEV4cGlyZXNBdCI6MTc3Mzg4MTQxMn0.pWBHcolaeZXd-5DAkMobbJn5DbFoSTDEWYuQn0LC5U4"   
   };
 
   const token = IPTV_TOKENS[tokenKey];
@@ -376,6 +382,23 @@ window.CHANNELS_DATA = [
   url: withHlsToken(
     "https://converse.nathcreqtives.com/channels/smselect/playlist.m3u8",
     "StarMoviesSelect"
+  ),
+  requiresToken: true,
+  drm: false,
+  favorite: false
+  
+     },
+{
+  
+   id: "hls-gma-news-tv",
+  number: 29,
+  name: "GMA NEWS TV ",
+  group: "3rstv",
+  category: "HLS",
+  logo: "https://i.imgur.com/ddkTza1.png",
+  url: withHlsToken(
+    "https://converse.nathcreqtives.com/channels/gmanewstv/playlist.m3u8",
+    "gmanewstv"
   ),
   requiresToken: true,
   drm: false,
@@ -1420,8 +1443,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/oneph_sd/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "92834ab4a7e1499b90886c5d49220e46",
-    key: "a7108d9a6cfcc1b7939eb111daf09ab3",
+    keyId: "b1c7e9d24f8a4d6c9e337a2f1c5b8d60",
+    key: "8ff2e524cc1e028f2a4d4925e860c796",
     favorite: false
   },
   {
@@ -1476,8 +1499,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/onenews_hd1/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "d39eb201ae494a0b98583df4d110e8dd",
-    key: "6797066880d344422abd3f5eda41f45f",
+    keyId: "2e6a9d7c1f4b4c8a8d33c7b1f0a5e924",
+    key: "4c71e178d090332fbfe72e023b59f6d2",
     favorite: false
   },
   {
@@ -1509,18 +1532,21 @@ id: "world-cartoon-network",
     favorite: false
   },
   {
-    id: "cignal-a2z",
-    number: 10,
-    name: "A2Z",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://static.wikia.nocookie.net/russel/images/8/85/A2Z_Channel_11_without_Channel_11_3D_Logo_2020.png/revision/latest?cb=20231101144828",
-    url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_a2z/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "f703e4c8ec9041eeb5028ab4248fa094",
-    key: "c22f2162e176eee6273a5d0b68d19530",
-    favorite: false
+    id: "cignal-A2Z",
+  number: 10,
+  name: "A2Z",
+  group: "Cignal",
+  category: "Cignal",
+  logo: "https://ottepg8.comclark.com:8443/iptvepg/images/markurl/mark_1723129013828.png",
+  url: withToken(
+    "https://converse.nathcreqtives.com/cignal-a2z/manifest.mpd",
+    "cignal"
+  ),
+  drm: true,
+  drmType: "clearkey",
+  keyId: "3f6d8a2c1b7e4c9f8d52a7e1b0c6f93d",
+  key: "4019f9269b9054a2b9e257b114ebbaf2",
+  favorite: false 
   },
   {
     id: "cignal-bilyonaryo",
@@ -1617,8 +1643,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_hbohd/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "d47ebabf7a21430b83a8c4b82d9ef6b1",
-    key:   "54c213b2b5f885f1e0290ee4131d425b",
+    keyId: "c2b7a1e95d4f4c3a8e617f9d0a2b6c18",
+    key:   "27fca1ab042998b0c2f058b0764d7ed4",
     favorite: false
   },
   {
@@ -1659,8 +1685,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_pbarush_hd1/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "76dc29dd87a244aeab9e8b7c5da1e5f3",
-    key:   "95b2f2ffd4e14073620506213b62ac82",
+    keyId: "d7f1a9c36b2e4f8d9a441c5e7b2d8f60",
+    key:   "fb83c86f600ab945e7e9afed8376eb1e",
     favorite: false
   },
   {
@@ -1673,8 +1699,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_onesportsplus_hd1/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "322d06e9326f4753a7ec0908030c13d8",
-    key:   "1e3e0ca32d421fbfec86feced0efefda",
+    keyId: "f00bd0122a8a4da1a49ea6c49f7098ad",
+    key:   "a4079f3667ba4c2bcfdeb13e45a6e9c6",
     favorite: false
   },
   {
@@ -1687,23 +1713,10 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_tapsports/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "eabd2d95c89e42f2b0b0b40ce4179ea0",
-    key:   "0e7e35a07e2c12822316c0dc4873903f",
+    keyId: "5e7c1b9a2d8f4a6c9f30b1d6e2a8c744",
+    key:   "6178d9d177689eec5028e2dd608ae7b6",
     favorite: false
-  },
-  {
-    id: "cignal-tvup",
-    number: 407,
-    name: "TVUP!",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://cms.cignal.tv/Upload/Images/TVUP%20Logo%20.png",
-    url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/tvup_prd/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "83e813ccd4ca4837afd611037af02f63",
-    key:   "a97c515dbcb5dcbc432bbd09d15afd41",
-    favorite: false
+  
   },
   {
     id: "cignal-rock-action",
@@ -1715,23 +1728,10 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_rockextreme/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "0f852fb8412b11edb8780242ac120002",
-    key:   "4cbc004d8c444f9f996db42059ce8178",
+    keyId: "8d2a6f1c9b7e4c3da5f01e7b9c6d2f44",
+    key:   "23841651ebf49fa03fdfcd7b43337f87",
     favorite: false
-  },
-  {
-    id: "cignal-tap-tv",
-    number: 409,
-    name: "Tap TV",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://i.imgur.com/KJaSftF.png",
-    url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/cg_taptv_sd/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "f6804251e90b4966889b7df94fdc621e",
-    key:   "55c3c014f2bd12d6bd62349658f24566",
-    favorite: false
+ 
   },
   {
     id: "cignal-knowledge-channel",
@@ -1743,8 +1743,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/knowledge_channel/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "0f856fa0412b11edb8780242ac120002",
-    key:   "783374273ef97ad3bc992c1d63e091e7",
+    keyId: "c7d2b1e94f8a4d6c8a106b3d1f9c2e55",
+    key:   "2052f6b844aa53144bb32f0e41295106",
     favorite: false
   },
   {
@@ -1771,8 +1771,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/fashiontvhd/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "971ebbe2d887476398e97c37e0c5c591",
-    key:   "472aa631b1e671070a4bf198f43da0c7",
+    keyId: "9d7c1f2a6b4e4a8d8f33c1e5b7d2a960",
+    key:   "3a18c535c52db7c79823f59036a9d195",
     favorite: false
   },
   {
@@ -1791,34 +1791,7 @@ id: "world-cartoon-network",
   },
   // =============== CIGNAL – BATCH 3 (ClearKey DASH) ===============
   {
-    id: "cignal-tap-action-flix",
-    number: 414,
-    name: "Tap Action Flix",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://i.ibb.co/wgjPKFW/IMG-20241029-111906.png",
-    url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/cg_tapactionflix_hd1/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "bee1066160c0424696d9bf99ca0645e3",
-    key:   "f5b72bf3b89b9848de5616f37de040b7",
-    favorite: false
-  },
-  {
-    id: "cignal-kix",
-    number: 415,
-    name: "KIX",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://i.imgur.com/B8Fmzer.png",
-    url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/kix_hd1/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "a8d5712967cd495ca80fdc425bc61d6b",
-    key:   "f248c29525ed4c40cc39baeee9634735",
-    favorite: false
-  },
-  {
+   
     id: "cignal-warner-tv",
     number: 416,
     name: "Warner TV",
@@ -1828,8 +1801,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_warnertvhd.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "4503cf86bca3494ab95a77ed913619a0",
-    key:   "afc9c8f627fb3fb255dee8e3b0fe1d71",
+    keyId: "7f2a9c6d1e5b4c8a8d10a2b7e1c9f344",
+    key:   "ae3d135d5ddd9e8f3a7bbfbfae0e40d1",
     favorite: false
   },
   {
@@ -1856,8 +1829,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_historyhd/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "a7724b7ca2604c33bb2e963a0319968a",
-    key:   "6f97e3e2eb2bade626e0281ec01d3675",
+    keyId: "e2a8c7d15b9f4d6a9c101f7e3b2d8a44",
+    key:   "397ca914a73b1e00bc94ed9eccf9c258",
     favorite: false
   },
   {
@@ -1926,8 +1899,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_rockentertainment/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "e4ee0cf8ca9746f99af402ca6eed8dc7",
-    key:   "be2a096403346bc1d0bb0f812822bb62",
+    keyId: "a8b2d6f14c9e4d7a8f552c1e9b7d6a30",
+    key:   "b61a33a4281e7c8e68b24b9af466f7b4",
     favorite: false
   },
   {
@@ -1982,8 +1955,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cgnl_nba/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "c5e51f41ceac48709d0bdcd9c13a4d88",
-    key:   "20b91609967e472c27040716ef6a8b9a",
+    keyId: "d1f8a0c97b3d4e529a6f2c4b8d7e1f90",
+    key:   "58ab331d14b66bf31aca4284e0a3e536",
     favorite: false
   },
   {
@@ -2038,26 +2011,13 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_axn_sd/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "fd5d928f5d974ca4983f6e9295dfe410",
-    key:   "3aaa001ddc142fedbb9d5557be43792f",
+    keyId: "8a6c2f1e9d7b4c5aa1f04d2b7e9c1f88",
+    key:   "05e6bfa4b6805c46b772f35326b26b36",
     favorite: false
   },
   // =============== CIGNAL – BATCH 4 (ClearKey DASH) ===============
   {
-    id: "cignal-abc-australia",
-    number: 432,
-    name: "ABC Australia",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://i.imgur.com/kVVax44.png",
-    url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/abc_aus/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "389497f9f8584a57b234e27e430e04b7",
-    key:   "3b85594c7f88604adf004e45c03511c0",
-    favorite: false
-  },
-  {
+   
     id: "cignal-travel-channel",
     number: 433,
     name: "Travel Channel",
@@ -2081,8 +2041,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/bloomberg_sd/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "ef7d9dcfb99b406cb79fb9f675cba426",
-    key:   "b24094f6ca136af25600e44df5987af4",
+    keyId: "3b8e6d1f2c9a4f7d9a556c1e7b2d8f90",
+    key:   "09f0bd803966c4befbd239cfa75efe23",
     favorite: false
   },
   {
@@ -2123,8 +2083,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_dreamworks_hd1/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "4ab9645a2a0a47edbd65e8479c2b9669",
-    key:   "8cb209f1828431ce9b50b593d1f44079",
+    keyId: "7b1e9c4d5a2f4d8c9f106d3a8b2c1e77",
+    key:   "8b2904224c6cee13d2d4e06c0a3b2887",
     favorite: false
   },
   {
@@ -2137,8 +2097,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_hitsnow/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "14439a1b7afc4527bb0ebc51cf11cbc1",
-    key:   "92b0287c7042f271b266cc11ab7541f1",
+    keyId: "f9c3d6b18a2e4d7f9e453b1a8c6d2f70",
+    key:   "ce8874347ec428c624558dcdc3575dd4",
     favorite: false
   },
   {
@@ -2179,8 +2139,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_hitsmovies/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "f56b57b32d7e4b2cb21748c0b56761a7",
-    key:   "3df06a89aa01b32655a77d93e09e266f",
+    keyId: "2c8a5f1e7b9d4c6a9e55f1d7b2a8c360",
+    key:   "c9f622dff27e9e1c1f78617ba3b81a62",
     favorite: false
   },
   {
@@ -2207,8 +2167,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/lotusmacau_prd/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "60dc692e64ea443a8fb5ac186c865a9b",
-    key:   "01bdbe22d59b2a4504b53adc2f606cc1",
+    keyId: "9a7c2d1f4e8b4a6d8f301b5c9e7d2a44",
+    key:   "ca88469cabc18aa33d1f2e46a6efb4f7",
     favorite: false
   },
   {
@@ -2263,8 +2223,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/cg_animal_planet_sd/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "436b69f987924fcbbc06d40a69c2799a",
-    key:   "c63d5b0d7e52335b61aeba4f6537d54d",
+    keyId: "1c9f7a6d3b2e4e5d8a61f4d0c2b9e813",
+    key:   "b8f52451c67a2b54f272543eef45b621",
     favorite: false
   },
   {
@@ -2294,20 +2254,7 @@ id: "world-cartoon-network",
     keyId: "900c43f0e02742dd854148b7a75abbec",
     key:   "da315cca7f2902b4de23199718ed7e90",
     favorite: false
-  },
-  {
-    id: "cignal-france24",
-    number: 450,
-    name: "France24",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://i.imgur.com/61MSiq9.png",
-    url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/france24/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "257f9fdeb39d41bdb226c2ae1fbdaeb6",
-    key:   "e80ead0f4f9d6038ab34f332713ceaa5",
-    favorite: false
+ 
   },
   {
     id: "cignal-ibc-13",
@@ -2361,8 +2308,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/cg_animax_sd_new/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "92032b0e41a543fb9830751273b8debd",
-    key:   "03f8b65e2af785b10d6634735dbe6c11",
+    keyId: "1e7b9d2c6a4f4d8c9f33b5c1a8d7e260",
+    key:   "67336c0c5b24fb4b8caac248dad3c55d",
     favorite: false
   },
   {
@@ -2375,8 +2322,8 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/hits_hd1/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "dac605bc197e442c93f4f08595a95100",
-    key:   "975e27ffc1b7949721ee3ccb4b7fd3e5",
+    keyId: "6d2f8a1c9b5e4c7da1f03e7b9d6c2a55",
+    key:   "37c9835795779f8d848a6119d3270c69",
     favorite: false
 	 },
   {
@@ -2392,49 +2339,7 @@ id: "world-cartoon-network",
     keyId: "47c093e0c9fd4f80839a0337da3dd876",
     key:   "50547394045b3d047dc7d92f57b5fb33",
     favorite: false
-  },
-  {
-    id: "cignal-global-trekker",
-    number: 456,
-    name: "Global Trekker",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/482_144.png",
-    url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_tapedge/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "4553f7e8011f411fb625cefc39274300",
-    key:   "98f2f1d153367e84b5d559dc9dfb9a35",
-    favorite: false
-  },
-  // =============== CIGNAL (batch: CCTV4 hanggang TV Maria) ===============
-  {
-    id: "cignal-cctv4",
-    number: 457,
-    name: "CCTV4",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://i.imgur.com/HBisPOA.png",
-    url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_cctv4/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "b83566836c0d4216b7107bd7b8399366",
-    key:   "32d50635bfd05fbf8189a0e3f6c8db09",
-    favorite: false
-  },
-  {
-    id: "cignal-tv5-monde",
-    number: 458,
-    name: "TV5 Monde",
-    group: "Cignal",
-    category: "Cignal",
-    logo: "https://klean.nl/wp-content/uploads/Logo_TV5_Monde_-_2021.svg_.png",
-    url: "https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_tv5_monde/default/index.mpd",
-    drm: true,
-    drmType: "clearkey",
-    keyId: "fba5a720b4a541b286552899ba86e38b",
-    key:   "f63fa50423148bfcbaa58c91dfcffd0e",
-    favorite: false
+ 
   },
   {
     id: "cignal-nickelodeon",
@@ -2474,22 +2379,22 @@ id: "world-cartoon-network",
     url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/hgtv_hd1/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "f0e3ab943318471abc8b47027f384f5a",
-    key:   "13802a79b19cc3485d2257165a7ef62a",
+    keyId: "f1e8c2d97a3b4f5d8c669d1a2b7e4c30",
+    key:   "03aaa7dcf893e6b934aeb3c46f9df5b9",
     favorite: false
   },
   {
-    id: "cignal-crime-investigation",
+    id: "cignal-wil-tv",
     number: 462,
-    name: "Crime & Investigation",
+    name: "Wil TV",
     group: "Cignal",
     category: "Cignal",
-    logo: "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/369_144.png",
-    url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/crime_invest/default/index.mpd",
+    logo: "https://static.wikia.nocookie.net/tv-philippines/images/4/43/WILTV_logo.png/revision/latest?cb=20251214021032",
+    url: "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/wiltv/default/index.mpd",
     drm: true,
     drmType: "clearkey",
-    keyId: "21e2843b561c4248b8ea487986a16d33",
-    key:   "db6bb638ccdfc1ad1a3e98d728486801",
+    keyId: "b1773d6f982242cdb0f694546a3db26f",
+    key:   "ae9a90dbea78f564eb98fe817909ec9a",
     favorite: false
   },
   {
