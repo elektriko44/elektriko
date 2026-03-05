@@ -739,7 +739,7 @@ function applyRadioBackground(ch) {
     stopVisualizer();
 
     if (hls) {
-      try { hls.destroy(); } catch {}
+      try { if(hls){ hls.destroy(); hls=null;} } catch {}
       hls = null;
     }
 
@@ -865,7 +865,27 @@ await destroyPlayer();
     // HLS
     if (lower.includes(".m3u8")) {
       if (window.Hls && window.Hls.isSupported()) {
-        hls = new window.Hls();
+        hls = new window.Hls({
+  enableWorker: true,
+  lowLatencyMode: true,
+  startPosition: -1,
+
+  backBufferLength: 30,
+  maxBufferLength: 15,
+  maxMaxBufferLength: 20,
+
+  liveSyncDuration: 2,
+  liveMaxLatencyDuration: 4,
+
+  manifestLoadingTimeOut: 6000,
+  manifestLoadingMaxRetry: 2,
+
+  fragLoadingTimeOut: 6000,
+  fragLoadingMaxRetry: 2,
+
+  capLevelToPlayerSize: true,
+  startLevel: -1
+});
         hls.loadSource(url);
         hls.attachMedia(mediaEl);
         if (typeof startSecureRefresh === "function") startSecureRefresh(mediaEl, ch, hls);
